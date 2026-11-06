@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#132a2a">
+  <meta name="description" content="Asesoría jurídica cercana, clara y comprometida. Conoce nuestros servicios y agenda una consulta.">
+  <title>Leonardo Abogado | Asesoría jurídica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #172d2c;
+      --ink-soft: #314644;
+      --paper: #f7f6f1;
+      --white: #fff;
+      --gold: #c69b58;
+      --muted: #687775;
+      --line: #e4e6df;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar { background: var(--ink); color: #e6e9e1; font-size: .82rem; }
+    .topbar-inner { min-height: 38px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .topbar p { margin: 0; }
+    .topbar a { color: #e6c58e; }
+    header { background: var(--paper); position: sticky; top: 0; z-index: 5; border-bottom: 1px solid rgba(23,45,44,.08); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; line-height: 1.3; }
+    .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--gold); color: var(--gold); font-family: var(--serif); font-size: 1.25rem; }
+    .brand span:last-child { max-width: 150px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: .9rem; font-weight: 500; }
+    .nav-links a:not(.button):hover { color: #9c7439; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 23px; background: var(--gold); color: #182b29; font-size: .88rem; font-weight: 700; transition: .2s ease; border: 1px solid var(--gold); }
+    .button:hover { background: #d3ae72; border-color: #d3ae72; transform: translateY(-1px); }
+    .button-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,.55); }
+    .button-outline:hover { color: var(--ink); }
+    .hero { position: relative; overflow: hidden; min-height: 610px; display: flex; align-items: center; color: var(--white); background: var(--ink); }
+    .hero::before { content: ''; position: absolute; inset: 0 0 0 48%; opacity: .48; background: linear-gradient(90deg, var(--ink) 0%, rgba(19,42,42,.35) 48%, rgba(19,42,42,.2) 100%), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=85') center/cover; }
+    .hero::after { content: ''; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(198,155,88,.23); border-radius: 50%; right: 7%; top: 17%; }
+    .hero-content { position: relative; z-index: 1; width: min(650px, 70%); padding: 95px 0; }
+    .eyebrow { margin: 0 0 20px; color: var(--gold); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; }
+    h1 { margin: 0; font-size: clamp(2.7rem, 5.5vw, 4.7rem); letter-spacing: -.025em; }
+    .hero-copy { max-width: 510px; margin: 24px 0 32px; color: #d4ddda; font-size: 1.06rem; }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .hero-note { margin: 38px 0 0; color: #b8c5c1; font-size: .82rem; }
+    .trust-strip { background: var(--white); border-bottom: 1px solid var(--line); }
+    .trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); padding: 26px 0; }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--ink-soft); font-size: .9rem; font-weight: 600; }
+    .trust-item + .trust-item { border-left: 1px solid var(--line); }
+    .trust-icon { color: var(--gold); font-size: 1.15rem; }
+    section { padding: 96px 0; }
+    .section-heading { max-width: 650px; margin-bottom: 48px; }
+    .section-heading h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 3.2rem); }
+    .section-heading > p:last-child { margin: 16px 0 0; color: var(--muted); }
+    .practice { background: var(--white); }
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .practice-card { padding: 30px 28px; border: 1px solid var(--line); min-height: 235px; transition: .2s ease; }
+    .practice-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .card-number { color: var(--gold); font-family: var(--serif); font-size: 1.15rem; }
+    .practice-card h3 { margin: 18px 0 10px; font-size: 1.45rem; }
+    .practice-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .about { background: #eeefe9; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 75px; }
+    .about-image { position: relative; min-height: 470px; background: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1000&q=85') center/cover; }
+    .about-image::after { content: ''; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--gold); z-index: 0; }
+    .about-image::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(19,42,42,.24), transparent 60%); }
+    .about-copy { position: relative; z-index: 1; }
+    .about-copy h2 { margin: 0 0 20px; font-size: clamp(2.2rem, 4vw, 3.1rem); }
+    .about-copy > p { color: var(--muted); }
+    .values { margin: 28px 0 32px; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .values li { display: flex; gap: 12px; align-items: flex-start; font-weight: 600; }
+    .values li::before { content: '✓'; color: #a77d42; font-weight: 700; }
+    .quote { background: var(--ink); color: var(--white); text-align: center; padding: 76px 0; }
+    .quote blockquote { max-width: 800px; margin: 0 auto; font: 500 clamp(1.7rem, 3.4vw, 2.7rem)/1.35 var(--serif); }
+    .quote p { margin: 18px 0 0; color: #c7d0cb; font-size: .85rem; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; }
+    .contact-copy h2 { margin: 0 0 18px; font-size: clamp(2.3rem, 4vw, 3.2rem); }
+    .contact-copy > p { color: var(--muted); }
+    .contact-detail { margin-top: 30px; display: grid; gap: 18px; }
+    .contact-detail strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .11em; color: #8d744f; }
+    .contact-detail span { color: var(--ink-soft); }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: grid; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
+    label { color: var(--ink-soft); font-size: .82rem; font-weight: 600; }
+    input, textarea, select { width: 100%; padding: 13px 14px; color: var(--ink); background: var(--white); border: 1px solid #dfe2da; border-radius: 0; font: inherit; font-size: .9rem; }
+    input:focus, textarea:focus, select:focus { outline: 2px solid rgba(198,155,88,.4); border-color: var(--gold); }
+    textarea { min-height: 125px; resize: vertical; }
+    form .button { cursor: pointer; justify-self: start; }
+    .form-note { grid-column: 1/-1; margin: -5px 0 0; font-size: .75rem; color: var(--muted); }
+    footer { background: #102322; color: #d1d9d4; padding: 28px 0; font-size: .8rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    footer p { margin: 0; }
+    footer a { color: #e6c58e; }
+    @media (max-width: 800px) {
+      .nav-links { gap: 18px; }
+      .nav-links a:not(.button) { display: none; }
+      .hero { min-height: 560px; }
+      .hero::before { inset-left: 25%; opacity: .35; }
+      .hero-content { width: min(620px, 90%); }
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 40px; }
+      .about-image { min-height: 400px; }
+      .contact-grid { gap: 38px; }
+    }
+    @media (max-width: 580px) {
+      .container { width: min(100% - 36px, 1120px); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar-inner p:last-child { display: none; }
+      .nav { min-height: 72px; }
+      .brand-mark { width: 36px; height: 36px; }
+      .brand { font-size: .7rem; }
+      .nav-links .button { min-height: 43px; padding: 0 13px; font-size: .78rem; }
+      .hero { min-height: 580px; }
+      .hero::before { inset: 0; opacity: .27; }
+      .hero::after { width: 280px; height: 280px; right: -120px; top: 12%; }
+      .hero-content { width: 100%; padding: 78px 0; }
+      .hero-copy { font-size: .98rem; }
+      .hero-actions .button { width: 100%; }
+      .trust-inner { grid-template-columns: 1fr; gap: 14px; padding: 22px 0; }
+      .trust-item { justify-content: flex-start; }
+      .trust-item + .trust-item { border: 0; }
+      section { padding: 72px 0; }
+      .section-heading { margin-bottom: 32px; }
+      .practice-grid { grid-template-columns: 1fr; gap: 12px; }
+      .practice-card { min-height: auto; padding: 24px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-image { min-height: 350px; margin-right: 12px; }
+      .contact-grid { gap: 36px; }
+      form { grid-template-columns: 1fr; }
+      .field-full, .form-note { grid-column: auto; }
+      form .button { width: 100%; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p>Atención con cita previa · Asesoría jurídica personalizada</p>
+      <p><a href="#contacto">Solicita una consulta</a></p>
+    </div>
+  </div>
+  <header>
+    <nav class="container nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Leonardo Abogado, inicio"><span class="brand-mark">L</span><span>Leonardo<br>Abogado</span></a>
+      <div class="nav-links">
+        <a href="#servicios">Áreas de práctica</a>
+        <a href="#nosotros">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+        <a class="button" href="#contacto">Agendar consulta <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Compromiso · Confianza · Claridad</p>
+          <h1>Defensa legal con visión y compromiso.</h1>
+          <p class="hero-copy">Cada caso merece atención personal y una estrategia clara. Te acompaño para que puedas tomar decisiones informadas y defender tus derechos.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contacto">Conversemos sobre tu caso <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="#servicios">Conoce mis servicios</a>
+          </div>
+          <p class="hero-note">Primera conversación confidencial y sin compromiso.</p>
+        </div>
+      </div>
+    </section>
+    <div class="trust-strip" aria-label="Compromisos profesionales">
+      <div class="container trust-inner">
+        <div class="trust-item"><span class="trust-icon">✳</span> Atención personalizada</div>
+        <div class="trust-item"><span class="trust-icon">✳</span> Comunicación transparente</div>
+        <div class="trust-item"><span class="trust-icon">✳</span> Estrategia a tu medida</div>
+      </div>
+    </div>
+    <section class="practice" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Áreas de práctica</p>
+          <h2>Asesoría legal para lo que más importa.</h2>
+          <p>Orientación cercana y soluciones pensadas para las necesidades de cada persona y situación.</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-card"><span class="card-number">01</span><h3>Derecho civil</h3><p>Contratos, obligaciones, responsabilidad civil y resolución de controversias.</p></article>
+          <article class="practice-card"><span class="card-number">02</span><h3>Derecho de familia</h3><p>Asesoría en acuerdos familiares, cuidado personal, alimentos y procesos de familia.</p></article>
+          <article class="practice-card"><span class="card-number">03</span><h3>Derecho laboral</h3><p>Orientación sobre relaciones laborales, derechos, acuerdos y conflictos de trabajo.</p></article>
+          <article class="practice-card"><span class="card-number">04</span><h3>Derecho comercial</h3><p>Apoyo jurídico para emprendedores y empresas en sus operaciones y acuerdos.</p></article>
+          <article class="practice-card"><span class="card-number">05</span><h3>Asesoría preventiva</h3><p>Revisión y orientación legal para anticipar riesgos antes de tomar decisiones.</p></article>
+          <article class="practice-card"><span class="card-number">06</span><h3>Representación legal</h3><p>Acompañamiento estratégico y representación, según las necesidades de cada caso.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-image" role="img" aria-label="Biblioteca jurídica"></div>
+        <div class="about-copy">
+          <p class="eyebrow">Un aliado en quien confiar</p>
+          <h2>La ley puede ser compleja. Tu asesoría, no.</h2>
+          <p>Mi trabajo consiste en escuchar, explicar tus opciones con honestidad y construir contigo un camino legal adecuado. Tendrás comunicación directa y sabrás qué esperar en cada etapa.</p>
+          <ul class="values">
+            <li>Explicaciones claras, sin tecnicismos innecesarios.</li>
+            <li>Confidencialidad y trato respetuoso en todo momento.</li>
+            <li>Una estrategia definida de acuerdo con tu situación.</li>
+          </ul>
+          <a class="button" href="#contacto">Hablemos de tu caso <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="quote">
+      <div class="container">
+        <blockquote>“Una buena defensa empieza por escuchar y entender lo que realmente necesitas.”</blockquote>
+        <p>LEONARDO · ABOGADO</p>
+      </div>
+    </section>
+    <section id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Contacto</p>
+          <h2>Tu consulta comienza aquí.</h2>
+          <p>Cuéntame brevemente qué necesitas. Me pondré en contacto contigo para coordinar una primera conversación.</p>
+          <div class="contact-detail">
+            <div><strong>Correo electrónico</strong><span>Agrega aquí tu correo profesional</span></div>
+            <div><strong>Ubicación</strong><span>Atención presencial y en línea · Indica tu ciudad</span></div>
+            <div><strong>Horario</strong><span>Lunes a viernes · Con cita previa</span></div>
+          </div>
+        </div>
+        <form action="mailto:tu-correo@ejemplo.com" method="post" enctype="text/plain">
+          <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" autocomplete="name" required></div>
+          <div class="field"><label for="email">Correo electrónico</label><input id="email" name="Correo" type="email" placeholder="nombre@correo.com" autocomplete="email" required></div>
+          <div class="field field-full"><label for="area">¿En qué podemos ayudarte?</label><select id="area" name="Área de consulta" required><option value="" disabled selected>Selecciona un área</option><option>Derecho civil</option><option>Derecho de familia</option><option>Derecho laboral</option><option>Derecho comercial</option><option>Otro asunto</option></select></div>
+          <div class="field field-full"><label for="mensaje">Cuéntanos brevemente</label><textarea id="mensaje" name="Mensaje" placeholder="Describe tu consulta (no incluyas información confidencial todavía)" required></textarea></div>
+          <p class="form-note">Este formulario es solo una solicitud de contacto y no crea una relación abogado-cliente.</p>
+          <button class="button field-full" type="submit">Enviar consulta <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Leonardo Abogado. Todos los derechos reservados.</p>
+      <p>La información de este sitio es general y no constituye asesoría legal.</p>
+    </div>
+  </footer>
+</body>
+</html>
